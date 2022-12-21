@@ -1,3 +1,4 @@
-add_executable(main main.cpp)
+add_library(memalloc SHARED memalloc.h memalloc.cpp)
 
-target_link_libraries(main PRIVATE fmt::fmt spdlog::spdlog)
+add_executable(main main.cpp)
+target_link_libraries(main PRIVATE fmt::fmt spdlog::spdlog memalloc)
